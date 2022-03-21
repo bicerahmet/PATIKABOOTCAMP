@@ -1,7 +1,7 @@
-package com.company;
+package PatikaStore;
 
-import com.company.Devices.CepTelefonu;
-import com.company.Devices.NoteBook;
+import PatikaStore.Devices.CepTelefonu;
+import PatikaStore.Devices.NoteBook;
 
 import java.util.ArrayList;
 import java.util.Comparator;
