@@ -1,4 +1,4 @@
-package com.company;
+package PatikaStore;
 
 public class Main {
 
