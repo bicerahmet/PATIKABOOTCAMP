@@ -1,6 +1,6 @@
-package com.company;
+package Sorter;
 
-import com.company.company.Book;
+import Sorter.company.Book;
 
 import java.util.Comparator;
 import java.util.TreeSet;
