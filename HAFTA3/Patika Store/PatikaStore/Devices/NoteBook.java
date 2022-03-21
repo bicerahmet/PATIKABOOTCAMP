@@ -1,6 +1,6 @@
-package com.company.Devices;
+package PatikaStore.Devices;
 
-import com.company.Marka;
+import PatikaStore.Marka;
 
 import java.util.List;
 import java.util.Scanner;
