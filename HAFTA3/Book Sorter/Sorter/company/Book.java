@@ -1,4 +1,4 @@
-package com.company.company;
+package Sorter.company;
 
 public class Book implements Comparable<Book>{
     private String bookName;
