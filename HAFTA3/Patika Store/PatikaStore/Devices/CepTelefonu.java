@@ -1,4 +1,4 @@
-package com.company.Devices;
+package PatikaStore.Devices;
 
 
 import java.util.List;
