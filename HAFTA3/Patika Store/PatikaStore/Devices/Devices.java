@@ -1,6 +1,6 @@
-package com.company.Devices;
+package PatikaStore.Devices;
 
-import com.company.Marka;
+import PatikaStore.Marka;
 
 public class Devices {
     int id;
