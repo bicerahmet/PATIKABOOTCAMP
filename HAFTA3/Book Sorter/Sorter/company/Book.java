@@ -20,22 +20,14 @@ public class Book implements Comparable<Book>{
     public int getPageCount() {
         return pageCount;
     }
-
+    
     @Override
     public int compareTo(Book o) {
-        return this.getBookName().compareTo(o.getBookName());
+        return compareBookName(this,o);
     }
 
-
-
-
-//    @Override
-//    public int compareTo(Book o) {
-//        return compareBookName(this,o);
-//    }
-//
-//    public int compareBookName(Book o1, Book o2) {
-//        return o1.getBookName().compareTo(o2.getBookName());
-//    }
+    public int compareBookName(Book o1, Book o2) {
+        return o1.getBookName().compareTo(o2.getBookName());
+    }
 
 }
