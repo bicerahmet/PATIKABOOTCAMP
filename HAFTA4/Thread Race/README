@@ -1,0 +1,8 @@
+1'den 10000'e kadar olan sayılardan oluşan bir ArrayList oluşturuldu. 
+Ardından, bu ArrayList'teki 10 bin eleman 2500 eleman olacak şekilde 4 eşit parçaya ayrıldı. 
+Bu 4 ayrı 2500 elemanlık ArrayList'ler içinde tek ve çift sayıları bulan 4 ayrı Thread tasarlandı.
+
+Oluşturulan bu yapı ile beraber;
+4 Thread bulduğu çift sayıları ortak bir ArrayList'e eklenebiliyor.
+4 Thread bulduğu tek sayıları ortak bir ArrayList'e ekleyebiliyor.
+4 Thread kendine ait 2500 elemanlık ArrayList'i işlemeye başlayınca tek ve çift sayı ArrayList'lerini doldurmakta.
