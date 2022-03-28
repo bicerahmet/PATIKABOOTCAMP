@@ -1,3 +1,5 @@
+package Numbers;
+
 import java.util.ArrayList;
 
 public class Main {
@@ -21,27 +23,33 @@ public class Main {
         //We create 4 new thread for each of the quarters
         oddOrEven o1 = new oddOrEven(Q1);
         Thread t1 = new Thread(o1);
-        t1.start();
-        t1.join();
 
         oddOrEven o2 = new oddOrEven(Q2);
         Thread t2 = new Thread(o2);
-        t2.start();
-        t2.join();
 
         oddOrEven o3 = new oddOrEven(Q3);
         Thread t3 = new Thread(o3);
-        t3.start();
-        t3.join();
 
         oddOrEven o4 = new oddOrEven(Q4);
         Thread t4 = new Thread(o4);
+
+        t1.start();
+        t2.start();
+        t3.start();
         t4.start();
+
+        t1.join();
+        t2.join();
+        t3.join();
         t4.join();
 
+        System.out.println("Odds:");
+        System.out.println(oddOrEven.oddNumbers.toString());
+        System.out.println("Size of odd numbers: " + oddOrEven.oddNumbers.size());
 
-
-        o4.print();
+        System.out.println("Evens:");
+        System.out.println(oddOrEven.evenNumbers.toString());
+        System.out.println("Size of even numbers: " + oddOrEven.evenNumbers.size());
 
     }
 }
