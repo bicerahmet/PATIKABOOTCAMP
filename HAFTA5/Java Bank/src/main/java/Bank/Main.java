@@ -11,9 +11,6 @@ public class Main {
 
     public static void main(String[] args){
 
-
-
-        //ArrayList<User> users = new ArrayList<>();
         boolean again = true;
         Scanner scannerString = new Scanner(System.in);
         Scanner scannerInt = new Scanner(System.in);
@@ -25,16 +22,16 @@ public class Main {
         System.out.println("Devam etmek için herhangi bir tuşa basınız.\n...");
         String c = scannerString.nextLine();
 
-        //İlk kullanıcı
+        //İlk kullanıcı ile programın başlangıcı yapılıyor.
         users.add(addUser());
 
         while(again) {
 
-
+                //Ana menü
                 System.out.println("1.) Yeni bir kullanıcı oluştur.\n" +
                                 "2.) Hesap İşlemleri.\n" +
                                 "3.) Çıkış Yapmak için.\n");
-                //şifre unutma, sms
+                
                 switch (scannerInt.nextInt()) {
                     case 1 -> {
                         users.add(addUser());
@@ -55,6 +52,7 @@ public class Main {
 
     }
 
+    //Bankaya müşteri/kullanıcı ekleme
     public static User addUser(){
         //Yeni hesap ekleme
 
@@ -68,6 +66,7 @@ public class Main {
         long balance;
         long debt;
 
+        //Kullanıcı bilgileri
         System.out.println("İsim ve soyisim: ");
         name = scannerString.nextLine();
         System.out.println("T.C. Kimlik numaranızı giriniz: ");
@@ -79,6 +78,7 @@ public class Main {
 
         boolean birthChecker = true;
 
+        //Şifre ile doğum tarihi bağlantısı kontrol ediliyor
         while(birthChecker) {
             System.out.println("İçerisinde doğum tarihinizin olmadığı bir şifre belirleyiniz: ");
             password = scannerString.nextLine();
@@ -96,19 +96,19 @@ public class Main {
 
         System.out.println(name + " isimli kullanıcı başarıyla oluşturulmuştur.\n");
 
+        
+        //Borç ve bakiye bilgileri
         System.out.println(name + "isimli kullanıcının hesap bakiyesini girin.");
-
         balance = scannerLong.nextLong();
-
         System.out.println(name + "isimli kullanıcının bankamıza olan borcunu girin.");
-
         debt = scannerLong.nextLong();
 
-
+        //Oluşturulan kullanıcı döndürülüyor
         return new User(name, Id, birthDate, password, balance, debt);
 
     }
 
+    
     public static void accountOperations(){
 
         Scanner scannerString = new Scanner(System.in);
@@ -117,14 +117,13 @@ public class Main {
 
         boolean userFound = true;
 
+        //Hesaba giriş yapmak isteyen kişinin kimliği doğrulanıyor
         System.out.println("İşlem yapmak istediğiniz kullanıcıya ait İsim veya T.C. Kimlik numarası giriniz:\n");
-
         String nameOrId = scannerString.nextLine();
-
         User temp = findUser(nameOrId);
-
         System.out.println("Merhaba " + temp.name + "!\nGiriş yapmak için lütfen şifrenizi girin.");
 
+        //Hesaba giriş yapmak için parola doğrulaması yapılıyor
         for(int i=0; i<3; i++){
             if(temp.getPassword().equals(scannerString.nextLine())){
                 System.out.println("Sayın " + temp.name + ", Java Bank hesabınıza hoşgeldiniz.\n");
@@ -135,7 +134,7 @@ public class Main {
             }
         }
 
-
+        //Hesap işlemleri
         System.out.println("1.) Kullanıcı Bilgilerini Görüntüle.");
         System.out.println("2.) Hesap Bilgilerini Göüntüle.");
         System.out.println("3.) Para Yatırma.");
@@ -180,19 +179,17 @@ public class Main {
         }
     }
 
+    //Para transferi
     public static void balanceTransfer(User user){
 
         System.out.println("Lütfen paranızı transfer etmek istediğiniz kullanıcının ismini girin.");
 
         Scanner scannerString = new Scanner(System.in);
         Scanner scannerLong = new Scanner(System.in);
-
+        
         String name = scannerString.nextLine();
-
         User temp = findUser(name);
-
         System.out.println("Parayı göndermek istediğiniz hesabın sahibi: " + temp.name);
-
         boolean flag = true;
 
         while(flag) {
@@ -214,14 +211,17 @@ public class Main {
 
     }
 
+    //Para yatırma
     public static void deposit(User user, long money){
         user.setBalance(user.getBalance() + money);
     }
 
+    //Para Çekme
     public static void withdraw(User user, long money){
         user.setBalance(user.getBalance() - money);
     }
 
+    //Listemizden kullanıcı bulan metod
     public static User findUser(String name){
 
         boolean userFound = true;
@@ -249,6 +249,7 @@ public class Main {
 
     }
 
+    //Bankadan borç almak için kullanılan metod
     public static void loan(User user, long money){
         System.out.println("Bankamızdan " + money + " miktarında kredi çektiniz..");
         user.setDebt(user.getBalance()+money);
@@ -256,6 +257,7 @@ public class Main {
         System.out.println("Hesabınızdaki güncel borç miktarı: " + user.getDebt() + "\nHesabınızın güncel bakiyesi: " + user.getBalance());
     }
 
+    //bankaya olan borcu ödemek için kullanılan metod
     public static void loanPayment(User user, long money){
         System.out.println("Bankamızdaki " + user.getDebt() + " olan borcunuzun " + money + " kadarını ödediniz..");
         user.setDebt(user.getBalance()-money);
