@@ -5,3 +5,8 @@ Java’da bankacılıkta yapılan işlemlerin aynı görevi yapan “Online Bank
     Şifre içerisinde doğum tarihi olamaz.
     Kullanıcılar birbirine para transfer yapabiliyor.
     Kullanıcı bankaya kredi ödemesi veya kredi kartı ekstresi ödeyebiliyor
+    
+-> Önemli Not: İçinde bulunduğunuz konumda "error" isimli, ".png" uzantılı bir görsel bulunmaktadır. Bu görselde gözüktüğü gibi json okuma/yazma işlevini 
+kullanabilmek için kurulması gereken "maven" aracı kurulurken bir hata meydana gelmiştir. Bu yüzden json formatları kullanılamamıştır. Hatanın çözümü için
+önerilerinizi paylaşırsanız sevinirim, zira maven bundan sonraki projelerin çoğunluğunda kullanılması gereken bir araç.
+-> Hata hakkında bir fikri olan arkadaşlar için detaylı görseller paylaşabilirim.
