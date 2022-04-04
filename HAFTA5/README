@@ -1,1 +1,7 @@
+Java’da bankacılıkta yapılan işlemlerin aynı görevi yapan “Online Banka Sistemi” projesi yapmak.
 
+    Projede Banka ve Kullanıcılar var.
+    Kullanıcılar sisteme T.C. ve şifre ile giriş yapabilmekte.
+    Şifre içerisinde doğum tarihi olamaz.
+    Kullanıcılar birbirine para transfer yapabiliyor.
+    Kullanıcı bankaya kredi ödemesi veya kredi kartı ekstresi ödeyebiliyor
